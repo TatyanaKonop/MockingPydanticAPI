@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+#  todo-service-1:
+#    image: wiremock/wiremock:2.32.0
+#    container_name: todo-mock
+#    volumes:
+#      - ./local-setup:/home/wiremock
+#    ports:
+#      - "8383:8080"
+  todo-service-async:
+    image: wiremock/wiremock:2.32.0
+    container_name: todo-mock_async
+    volumes:
+      - ./local-setup:/home/wiremock
+    ports:
+      - "8383:8080"
+    command: --async-response-enabled=true

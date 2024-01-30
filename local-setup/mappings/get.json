@@ -1,0 +1,651 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "GET",
+    "urlPattern": "/v1/([a-z]*)\\?mesh_nm=mesh_maria_test"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+  "Mesh": {
+    "name": "mesh_maria_test",
+    "integrity_store": "mesh_maria_test_integritystore",
+    "created_by": "maryiamitsko@alidainc.com",
+    "created_at": "2023-12-18 07:04:07.011661",
+    "metrics": {
+      "MeshMetric - MeshStoreBackups count": 0,
+      "MeshMetric - MeshFlows count": 1,
+      "MeshMetric - MeshStores count": 1,
+      "MeshMetric - Methods count": 8,
+      "MeshMetric - MeshBotTypes count": 2,
+      "MeshMetric - MeshBotInstances count": 8
+    }
+  },
+  "MeshFlows": [
+    {
+      "MeshFlow_id": 302,
+      "MeshFlow_name": "al_mf_caboodle",
+      "Specs": {
+        "MeshFlow_id": 303,
+        "MeshBots": [
+          {
+            "MeshBotInstance Name": "AL_E2U_Caboodle_Biometrics",
+            "MeshBotInstance Seq": 1
+          },
+          {
+            "MeshBotInstance Name": "AL_E2U_Caboodle_Eligibility",
+            "MeshBotInstance Seq": 2
+          },
+          {
+            "MeshBotInstance Name": "AL_E2U_Caboodle_Encounters",
+            "MeshBotInstance Seq": 3
+          },
+          {
+            "MeshBotInstance Name": "AL_E2U_Caboodle_Labs",
+            "MeshBotInstance Seq": 4
+          },
+          {
+            "MeshBotInstance Name": "AL_E2U_Caboodle_PharmacyMDScripts",
+            "MeshBotInstance Seq": 5
+          }
+        ]
+      },
+      "Metrics": {
+        "MeshFlow_id": 304,
+        "MeshFlowMetric - MeshBotInstance count": 5
+      },
+      "Metadata": {
+        "MeshFlow_id": 305,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    }
+  ],
+  "MeshBotInstance": [
+    {
+      "MeshBotInstance_name": "AL_E2U_Caboodle_Biometrics",
+      "MeshBotInstance_id": 164,
+      "MeshBotType_nm": "EXT_CSV_UDS",
+      "Specs": {
+        "MeshBotInstance_id": 165,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mm_get_localfile",
+                "Method Seq": 1,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_extract_csvtodf",
+                "Method Seq": 2,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsobjects",
+                "Method Seq": 3,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvariables",
+                "Method Seq": 4,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvalues",
+                "Method Seq": 5,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsmemberobjects",
+                "Method Seq": 6,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_load_meshstore",
+                "Method Seq": 7,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {},
+      "Metadata": {
+        "MeshBotInstance_id": 167,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    },
+    {
+      "MeshBotInstance_name": "AL_E2U_Caboodle_Labs",
+      "MeshBotInstance_id": 200,
+      "MeshBotType_nm": "EXT_CSV_UDS",
+      "Specs": {
+        "MeshBotInstance_id": 201,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mm_get_localfile",
+                "Method Seq": 1,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_extract_csvtodf",
+                "Method Seq": 2,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsobjects",
+                "Method Seq": 3,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvariables",
+                "Method Seq": 4,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvalues",
+                "Method Seq": 5,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsmemberobjects",
+                "Method Seq": 6,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_load_meshstore",
+                "Method Seq": 7,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {},
+      "Metadata": {
+        "MeshBotInstance_id": 203,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    },
+    {
+      "MeshBotInstance_name": "AL_E2U_Caboodle_PharmacyWAG",
+      "MeshBotInstance_id": 224,
+      "MeshBotType_nm": "EXT_CSV_UDS",
+      "Specs": {
+        "MeshBotInstance_id": 225,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mm_get_localfile",
+                "Method Seq": 1,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_extract_csvtodf",
+                "Method Seq": 2,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsobjects",
+                "Method Seq": 3,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvariables",
+                "Method Seq": 4,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvalues",
+                "Method Seq": 5,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsmemberobjects",
+                "Method Seq": 6,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_load_meshstore",
+                "Method Seq": 7,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {},
+      "Metadata": {
+        "MeshBotInstance_id": 227,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    },
+    {
+      "MeshBotInstance_name": "AL_E2U_Caboodle_Encounters",
+      "MeshBotInstance_id": 188,
+      "MeshBotType_nm": "EXT_CSV_UDS",
+      "Specs": {
+        "MeshBotInstance_id": 189,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mm_get_localfile",
+                "Method Seq": 1,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_extract_csvtodf",
+                "Method Seq": 2,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsobjects",
+                "Method Seq": 3,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvariables",
+                "Method Seq": 4,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvalues",
+                "Method Seq": 5,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsmemberobjects",
+                "Method Seq": 6,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_load_meshstore",
+                "Method Seq": 7,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {},
+      "Metadata": {
+        "MeshBotInstance_id": 191,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    },
+    {
+      "MeshBotInstance_name": "AL_E2U_Caboodle_Eligibility",
+      "MeshBotInstance_id": 176,
+      "MeshBotType_nm": "EXT_CSV_UDS",
+      "Specs": {
+        "MeshBotInstance_id": 177,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mm_get_localfile",
+                "Method Seq": 1,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_extract_csvtodf",
+                "Method Seq": 2,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsobjects",
+                "Method Seq": 3,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvariables",
+                "Method Seq": 4,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvalues",
+                "Method Seq": 5,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsmemberobjects",
+                "Method Seq": 6,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_load_meshstore",
+                "Method Seq": 7,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {},
+      "Metadata": {
+        "MeshBotInstance_id": 179,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    },
+    {
+      "MeshBotInstance_name": "AL_E2U_Caboodle_PharmacyMDScripts",
+      "MeshBotInstance_id": 212,
+      "MeshBotType_nm": "EXT_CSV_UDS",
+      "Specs": {
+        "MeshBotInstance_id": 213,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mm_get_localfile",
+                "Method Seq": 1,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_extract_csvtodf",
+                "Method Seq": 2,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsobjects",
+                "Method Seq": 3,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvariables",
+                "Method Seq": 4,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvalues",
+                "Method Seq": 5,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsmemberobjects",
+                "Method Seq": 6,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_load_meshstore",
+                "Method Seq": 7,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {},
+      "Metadata": {
+        "MeshBotInstance_id": 215,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    },
+    {
+      "MeshBotInstance_name": "AL_E2U_Caboodle_Referrals",
+      "MeshBotInstance_id": 236,
+      "MeshBotType_nm": "EXT_CSV_UDS",
+      "Specs": {
+        "MeshBotInstance_id": 237,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mm_get_localfile",
+                "Method Seq": 1,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_extract_csvtodf",
+                "Method Seq": 2,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsobjects",
+                "Method Seq": 3,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvariables",
+                "Method Seq": 4,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsvalues",
+                "Method Seq": 5,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_transform_dftomsmemberobjects",
+                "Method Seq": 6,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              },
+              {
+                "Method": "mm_load_meshstore",
+                "Method Seq": 7,
+                "Method Specs URL": "https://meapidevapisaprem.blob.core.windows.net/json-specs/bot_specs/AL_E2U_BotSpec_m1.0_c0.4_230413.xlsx",
+                "Schedule": ""
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {},
+      "Metadata": {
+        "MeshBotInstance_id": 239,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    },
+    {
+      "MeshBotInstance_name": "update_metrics",
+      "MeshBotInstance_id": 248,
+      "MeshBotType_nm": "META_UPDATE_MS_METRICS",
+      "Specs": {
+        "MeshBotInstance_id": 249,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mtm_update_metrics",
+                "Method Seq": 1,
+                "Method Specs URL": "",
+                "Schedule": "{\"frequency\": \"Day\", \"interval\": 1, \"start_time\": \"2023-11-07T00:00:00Z\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {},
+      "Metadata": {
+        "MeshBotInstance_id": 251,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    }
+  ],
+  "MeshBotTypes": [
+    {
+      "MeshBotType_name": "EXT_CSV_UDS",
+      "MeshBotType_id": 140,
+      "Specs": {
+        "MeshBotType_id": 141,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mm_get_localfile",
+                "Method Seq": 1
+              },
+              {
+                "Method": "mm_extract_csvtodf",
+                "Method Seq": 2
+              },
+              {
+                "Method": "mm_transform_dftomsobjects",
+                "Method Seq": 3
+              },
+              {
+                "Method": "mm_transform_dftomsvariables",
+                "Method Seq": 4
+              },
+              {
+                "Method": "mm_transform_dftomsvalues",
+                "Method Seq": 5
+              },
+              {
+                "Method": "mm_transform_dftomsmemberobjects",
+                "Method Seq": 6
+              },
+              {
+                "Method": "mm_load_meshstore",
+                "Method Seq": 7
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {
+        "MeshBotType_id": 142,
+        "MeshBotTypeMetric - MeshBotInstance Count": 7,
+        "MeshBotTypeMetric - Method Count": 7
+      },
+      "Metadata": {
+        "MeshBotType_id": 143,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    },
+    {
+      "MeshBotType_name": "META_UPDATE_MS_METRICS",
+      "MeshBotType_id": 152,
+      "Specs": {
+        "MeshBotType_id": 153,
+        "states": [
+          {
+            "State": "transform",
+            "State Seq": 1,
+            "state_methods": [
+              {
+                "Method": "mtm_update_metrics",
+                "Method Seq": 1
+              }
+            ]
+          }
+        ]
+      },
+      "Metrics": {
+        "MeshBotType_id": 154,
+        "MeshBotTypeMetric - MeshBotInstance Count": 1,
+        "MeshBotTypeMetric - Method Count": 1
+      },
+      "Metadata": {
+        "MeshBotType_id": 155,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    }
+  ],
+  "Stores": [
+    {
+      "MeshStore_name": "al_ms_maria_test",
+      "MeshStore_id": 56,
+      "Specs": {
+        "MeshStore_id": 57,
+        "Is Secure": 0,
+        "Store Data Type": "ADLS",
+        "Store Key": "al_ms_maria_test_credentials",
+        "Can Write": 1,
+        "Can Read": 1
+      },
+      "Metrics": {
+        "MeshStore_id": 58,
+        "Successors": 4,
+        "User Tags": 1,
+        "Variable": 1,
+        "Doctor": 1,
+        "Patient": 1,
+        "Access Tags": 0,
+        "Date Updated": 0,
+        "Lineage": 0,
+        "Status Tags": 0,
+        "Security Tags": 0
+      },
+      "Metadata": {
+        "MeshStore_id": 59,
+        "Created By": "maryiamitsko@alidainc.com"
+      }
+    }
+  ]
+},
+  "headers": {
+    "Content-Type": "application/json"
+  }
+}
+}

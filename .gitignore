@@ -1,0 +1,8 @@
+temp/
+*.log
+.venv
+venv/
+.Python
+.idea/
+__pycache__/
+

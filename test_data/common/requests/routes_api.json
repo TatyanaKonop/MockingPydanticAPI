@@ -1,0 +1,5 @@
+{
+  "get_route": "/v1/meshh?mesh_nm=mesh_maria_test",
+  "get_route_process": "/v1/get_run",
+  "post_route": "/v1/store?mesh_nm=mesh_maria_test&path_to_config="
+}

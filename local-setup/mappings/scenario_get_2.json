@@ -1,0 +1,18 @@
+{
+  "priority": 1,
+  "scenarioName": "to_get_list_process",
+  "requiredScenarioState": "Stopped",
+  "request": {
+    "method": "GET",
+    "urlPath": "/v1/get_run"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+       "message": "There are no running meshapi jobs"
+    }
+  }
+}
+
+
+

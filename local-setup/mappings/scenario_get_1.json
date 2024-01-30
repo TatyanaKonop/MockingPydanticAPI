@@ -1,0 +1,21 @@
+{
+  "priority": 1,
+  "scenarioName": "to_get_list_process",
+  "requiredScenarioState": "Started",
+
+  "request": {
+    "method": "GET",
+    "urlPath": "/v1/get_run"
+  },
+  "response": {
+    "status": 404,
+    "jsonBody":
+
+    {"run_name": "meshapi-update-mesh",
+      "run_id": 1067071103121510,
+      "status": "RUNNING",
+      "creator_username": "maryiamitsko@alidainc.com"}
+
+  }
+}
+
